@@ -157,7 +157,6 @@ def binary_search(search_name: str) -> int:
     high = len(names_list) -1
 
     while low <= high:
-        counter += 1
         mid = math.ceil(low + (high - low) // 2)
         guess_name = names_list[mid]
 
@@ -168,6 +167,8 @@ def binary_search(search_name: str) -> int:
             high = mid - 1
         else:
             low = mid + 1
+
+        counter += 1
 
     print('Name was not found in list.')
     return counter

@@ -1,4 +1,5 @@
-from typing import List, Any, Tuple, Dict
+from typing import List, Dict
+from random import randrange
 
 most_selling_artists = [
     {'artist': 'U2', 'copies': 150},
@@ -61,7 +62,8 @@ def quick_sort(arr: List, key: str) -> tuple[list[Dict], int]:
     elif len(arr) == 2:
         return [arr[0], arr[1]] if arr[0][key] > arr[1][key] else [arr[1], arr[0]], operations_count
 
-    pivot = arr[0]
+    pivot = arr[randrange(len(arr) - 1)]
+
     smaller = [row for row in arr if row[key] < pivot[key]]
     bigger = [row for row in arr if row[key] > pivot[key]]
 
